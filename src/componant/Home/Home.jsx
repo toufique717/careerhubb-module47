@@ -9,7 +9,9 @@ const Home = () => {
             <h1>welcome to Home section</h1>
             <Banner></Banner>
             <Jobcatagory></Jobcatagory>
-            <FeautredJob></FeautredJob>
+             <div className="mx-40 my-5 p-2">
+             <FeautredJob ></FeautredJob>
+             </div>
         
         </div>
     );
