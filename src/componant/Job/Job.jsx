@@ -1,10 +1,10 @@
  
- 
 import { IoLocationOutline } from "react-icons/io5";
  
 import { AiOutlineDollar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const Job = ({job}) => {
-    const{job_title,logo,remote_or_onsite,job_type,company_name,location,salary} = job
+    const{id,job_title,logo,remote_or_onsite,job_type,company_name,location,salary} = job
     return (
         <div className="p-10">
 
@@ -37,7 +37,9 @@ const Job = ({job}) => {
          </div>
     </div>
     <div className="card-actions">
-      <button className="btn btn-primary"> Vew Details</button>
+       <Link to={`/job/${id}`}>
+       <button className="btn btn-primary"> Vew Details</button>
+       </Link>
     </div>
   </div>
 </div>

@@ -27,7 +27,7 @@ const FeautredJob = () => {
                 }
             </div>
             
-            <div className= { datalength === jobs.length && 'hidden'}>
+            <div className={datalength === jobs.length &&  'hidden'}>
             <button 
             
             onClick={()=>setdatalength()}
