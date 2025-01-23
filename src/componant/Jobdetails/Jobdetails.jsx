@@ -1,13 +1,10 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import { savejobapplication } from "../../utility/utility";
+import { saveJobApplication } from "../../utility/utility";
+ 
+ 
 
-const jobdetailss = () =>
-{
-
-    
-    toast('you successfully applied the job');
-}
+ 
 
   
 const Jobdetails = () => {
@@ -17,6 +14,13 @@ const Jobdetails = () => {
     const idint = parseInt(id);
     const job = jobs.find(job =>job.id ===idint)
     console.log(job)
+
+    const jobdetailss = () =>
+        {
+        
+            saveJobApplication(idint);
+            toast('you successfully applied the job');
+        }
     return (
         <div>
             
