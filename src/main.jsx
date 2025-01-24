@@ -12,9 +12,10 @@ import Home from './componant/Home/Home.jsx';
 import Statistics from './componant/Statistics/Statistics.jsx';
  
 import Blog from './componant/Blog/Blog.jsx';
-import Appliedjob from './componant/AppliedJob/Appliedjob.jsx';
+ 
 import Errorpage from './componant/Errorpage/Errorpage.jsx';
 import Jobdetails from './componant/Jobdetails/Jobdetails.jsx';
+import Appliedjob from './componant/AppliedJob/Appliedjob.jsx';
 
 const router = createBrowserRouter([
   {

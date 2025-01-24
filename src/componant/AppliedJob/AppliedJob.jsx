@@ -2,30 +2,27 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredJobApplication } from "../../utility/utility";
 
- 
+const AppliedJob = () => {
+    const jobs = useLoaderData();
+    const [appliedJobs, setAppliedJobs] = useState([]);
 
-const Appliedjob = () => {
+    useEffect(() => {
+        const storedJobIds = getStoredJobApplication();
+        if (jobs.length > 0) {
+            // Correcting the typo from `include` to `includes`
+            const jobsApplied = jobs.filter(job => storedJobIds.includes(job.id));
 
-    const jobs = useLoaderData()
-     const[appliedJobs,setappliedJobs] = useState([]);
-    useEffect(()=>
-        {
-            const storedJobIds  = getStoredJobApplication();
-            if(jobs.length>0)
-            {
-                const jobsApplied = jobs.filter(job => storedJobIds.include(job.id) )
+            setAppliedJobs(jobsApplied);
+            console.log(jobs, storedJobIds, jobsApplied);
+        }
+    }, [jobs]);
 
-                setappliedJobs(jobsApplied);
-                console.log(jobs,storedJobIds,jobsApplied);
-            }
-        },[])
     return (
         <div>
-            <h1> welcome to applied job section</h1>
-            <h1>Applied Jobs : {appliedJobs.length}</h1>
-            
+            <h1>Welcome to the applied job section</h1>
+            <h1>Applied Jobs: {appliedJobs.length}</h1>
         </div>
     );
 };
 
-export default Appliedjob;
+export default AppliedJob;
